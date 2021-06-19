@@ -1,3 +1,4 @@
+// 0x712e67a146f8d2992570521296b9e75f61cedb50
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.6;
 
@@ -13,6 +14,7 @@ contract honeyproof_api {
     address private safe_c;
     
     constructor() {
+        safe_c = address(0x75E774e7bbCbd3d9Ccc0e2f2F520283DEcDe8De4);
     }
     
     fallback() external payable {}
