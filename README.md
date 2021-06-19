@@ -1,4 +1,4 @@
-Tired of being fooled by honeypot scammers?
+Tired of being fooled by honeypot scammers?  
 This will keep your money safe from those scams.
 
 I have made a contract which will help you to buy token.
