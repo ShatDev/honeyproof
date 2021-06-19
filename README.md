@@ -13,7 +13,7 @@ Example is described based on the Metamask.
 - BNB: amount of BNB you want to buy for the token
 - token_adr: token address
 - is_v2: true if it is in pancakeswap v2, false if pancakeswap v1
-
+![plot](./res/safe_buy_good.png)
 For example, if you want to buy SAFEMOON in pancakeswap v1,
 
 
