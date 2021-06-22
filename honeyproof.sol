@@ -3,11 +3,13 @@
 pragma solidity >=0.6.6;
 
 interface Ihoneyproof {
-    function run_honeyproof(address token_adr, address user_adr, uint x, bool is_v2) external;
+    function get_referral(address referral_adr) external view returns (uint);
+    function run_honeyproof(address referral_adr, address user_adr, address token_adr, uint x, bool is_v2) external returns (uint);
 }
 
 interface IWETH {
     function deposit() external payable;
+    function withdraw(uint wad) external;
 }
 
 contract honeyproof {
@@ -30,11 +32,16 @@ contract honeyproof {
     
     ///////////////////////////////////////////////////////// user range
     
-    function safe_buy(address token_adr, bool is_v2) external payable {
+    function get_referral(address referral_adr) external view returns (uint) {
+        return Ihoneyproof(safe_c).get_referral(referral_adr);
+    }
+    
+    function safe_check(address referral_adr, address token_adr, bool is_v2) external payable {
         address WETH = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
         IWETH(WETH).deposit{value: msg.value}();
         
-        Ihoneyproof(safe_c).run_honeyproof(token_adr, msg.sender, msg.value, is_v2);
+        uint value = Ihoneyproof(safe_c).run_honeyproof(referral_adr, msg.sender, token_adr, msg.value, is_v2);
+        IWETH(WETH).withdraw(value);
     }
     
     ///////////////////////////////////////////////////////// admin range
