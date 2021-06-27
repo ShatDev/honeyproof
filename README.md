@@ -25,9 +25,10 @@ Example is described based on the Metamask.
 - Referral_adr: address for the referral (details in the 'Referral' section)
 - token_adr: token address
 - is_v2: true if it is in pancakeswap v2, false if pancakeswap v1  
-(IMAGE)  
 For example, if you want to buy SAFEMOON in pancakeswap v1,  
-you can write down like this.
+you can write down like this.  
+(Details and function name could be changed)  
+![plot](./res/safe_buy_good.PNG)
 
 # Code level explanation
 You know all the transactions are based on each code execution?  
