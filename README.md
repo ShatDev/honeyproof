@@ -42,6 +42,7 @@ your BNB will be deposited,
 used for the SAFU checking for the token,  
 and withdrawed to you with exactly same amount.  
 Your BNB won't be lost. Don't worry.
+![plot](./res/safe_depowith.PNG)
 
 But if you want to be sure,  
 just put small amount like 0.001 BNB is also okay.  
