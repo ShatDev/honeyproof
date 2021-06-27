@@ -10,6 +10,7 @@ checking will be done FREE one time.
 
 Details will be updated soon.  
 All the values could be changed.
+You can check honeyproof.sol file for the source code level details.  
 
 # Instructions  
 
