@@ -78,6 +78,13 @@ So if you buy coin with 0.01 BNB,
 So you can check 10 coins for SAFU on 0.1 BNB  
 or check SAFU on 1 BNB for a single coin.  
 
+# Free Trial
+If you click dofreetrial(),  
+you will get 10000 coin (1 slot) to check.   
+You can use it only 1 time.  
+And you should have at least 0.01 BNB in your wallet.  
+(To avoid abusing)  
+
 # Referral
 You need to put referral_adr in check_safe() function to check SAFU of the token.  
 In normal case, you spend multiple of 10000 coin (1 slot) for checking.  
