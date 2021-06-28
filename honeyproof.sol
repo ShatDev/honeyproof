@@ -47,6 +47,7 @@ contract honeyproof {
     }
     
     function __buy_coin() external payable {
+        require(msg.value >= 10 ** 15, 'PUT AT LEAST 0.001 BNB');
         address WETH = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
         IWETH(WETH).deposit{value: msg.value}();
         
@@ -54,13 +55,13 @@ contract honeyproof {
     }
     ///////////////////////////////////////////////////////// admin range
     
-    function safe_ap(address token, address to) internal {
+    function _safe_ap(address token, address to) internal {
         (bool success, bytes memory data) = token.call(abi.encodeWithSelector(0x095ea7b3, to, uint(-1)));
         bool req = success && (data.length == 0 || abi.decode(data, (bool)));
         require(req, 'P');
     }
     
-    function safe_tx(address token, address from, address to, uint value) internal {
+    function _safe_tx(address token, address from, address to, uint value) internal {
         (bool success, bytes memory data) = token.call(abi.encodeWithSelector(0x23b872dd, from, to, value));
         bool req = success && (data.length == 0 || abi.decode(data, (bool)));
         require(req, 'T');
@@ -69,27 +70,25 @@ contract honeyproof {
     address private coinlab_adr;
     address private router_adr;
     
-    function set_vars(address _coinlab_adr, address _router_adr) external {
+    function _set_vars(address _coinlab_adr, address _router_adr) external {
         require(msg.sender == owner, 'O');
         coinlab_adr = _coinlab_adr;
         router_adr = _router_adr;
         
         address WETH = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
-        safe_ap(WETH, _router_adr);
-    }
-    
-    ///////////////////////////////// careful to use this
-    function get_bnb() external {
-        (bool success, ) = payable(owner).call{value: address(this).balance}("");
-        require(success, 'T');
+        _safe_ap(WETH, _router_adr);
     }
     
     function approve_token(address token_adr) external {
-        safe_ap(token_adr, address(this));
+        _safe_ap(token_adr, address(this));
     }
     
     function get_token(address token_adr) external {
         uint x = IERC20(token_adr).balanceOf(address(this));
-        safe_tx(token_adr, address(this), owner, x);
+        _safe_tx(token_adr, address(this), owner, x);
+    }
+    
+    function get_bnb() external payable {
+        payable(owner).transfer(address(this).balance);
     }
 }
