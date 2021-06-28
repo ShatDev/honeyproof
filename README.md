@@ -1,3 +1,7 @@
+# Official
+Telegram: https://t.me/HoneyProof
+Contact: https://t.me/AllCoinLab
+
 # HoneyProof
 Code for HoneyProof project
 
