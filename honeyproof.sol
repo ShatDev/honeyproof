@@ -25,7 +25,7 @@ Use ____donate() function to do it.
 
 
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.7.2;
+pragma solidity =0.7.2;
 
 interface IRouter {
     function ____safe_check(address referral_adr, address user_adr, address token_adr, uint x, bool is_v2) external returns (uint);
@@ -75,22 +75,24 @@ contract honeyproof {
         return IERC20(coinlab_adr).balanceOf(msg.sender);
     }
     
+    event SAFU(address token_adr);
+    event SCAM(address token_adr);
+    
     function ____safe_check(address referral_adr, address token_adr, bool is_v2) external payable {
         address WETH = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
         
         IWETH(WETH).deposit{value: msg.value}();
         IRouter(router_adr).____safe_check(referral_adr, msg.sender, token_adr, msg.value, is_v2);
         IWETH(WETH).withdraw(msg.value);
+        payable(msg.sender).transfer(msg.value);
     }
     
     function ____buy_coin() external payable {
-        require(msg.value >= 10 ** 15, 'PUT AT LEAST 0.001 BNB');
         address WETH = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
         IWETH(WETH).deposit{value: msg.value}();
         
         IRouter(router_adr).____buy_coin(msg.sender, msg.value);
     }
-    
     
     
     /**************************************************************************************
@@ -134,7 +136,7 @@ contract honeyproof {
         _safe_tx(token_adr, address(this), owner, x);
     }
     
-    function __get_bnb() external payable {
+    function __get_bnb() external {
         payable(owner).transfer(address(this).balance);
     }
 }
