@@ -144,7 +144,7 @@ So if you buy coin with 0.01 BNB,
 10 slot is received.  
 So you can check 10 coins for SAFU on 0.1 BNB  
 or check SAFU on 1 BNB for a single coin.  
-Also you can use donate() to support me :)
+Also you can use donate() to support me :)  
 ![plot](./res/20210630_172855.png)
 
 Example transaction  
@@ -175,7 +175,7 @@ And Referral address will get 20% of your coin usage. (multiple of 2000 coin wil
 So if you add referral address 5 times, you can get 1 free time.  
 if you have been added to the referral address 5 times, also can get 1 free time.  
 Because of the discount, users are motivated to add valid referral address.  
-And because of redistribution, users are also motivated to promote themselves to be set in referral address. 
+And because of redistribution, users are also motivated to promote themselves to be set in referral address.  
 Think of it as a TOKENOMICS.  
 
 Referral address should satisfy conditions below:  
