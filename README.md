@@ -182,7 +182,7 @@ If you add your address in the referral_adr, you spend multiple of 10000 coin (1
 But if you add referral address, you will get 20% discount. (multiple of 8000 coin will be used)  
 60% of your coin usage will be sent to the contract.  
 And Referral address will get 20% of your coin usage. (multiple of 2000 coin will be transferred to the referral)  
-![plot](./res/20210630_174141.png)
+![plot](./res/20210630_174641.png)
 
 So if you add referral address 5 times, you can get 1 free time.  
 if you have been added to the referral address 5 times, also can get 1 free time.  
