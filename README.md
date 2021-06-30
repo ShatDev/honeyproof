@@ -145,11 +145,11 @@ So if you buy coin with 0.01 BNB,
 So you can check 10 coins for SAFU on 0.1 BNB  
 or check SAFU on 1 BNB for a single coin.  
 Also you can use donate() to support me :)
-![plot](./res/20210630_172855.PNG)
+![plot](./res/20210630_172855.png)
 
 Example transaction  
 https://bscscan.com/tx/0x48b7b7cd4b5cc26225e92b81bf37531fc0a925355dd84bee552aa88bc9aa7c95  
-![plot](./res/20210630_200116.PNG)
+![plot](./res/20210630_200116.png)
 
 
 
@@ -165,12 +165,12 @@ And you should have at least 0.01 BNB in your wallet to use this function.
 # Referral
 You need to put referral_adr in check_safe() function to check SAFU of the token.  
 If you add your address in the referral_adr, you spend multiple of 10000 coin (1 slot) for checking.  
-![plot](./res/20210630_174106.PNG)
+![plot](./res/20210630_174106.png)
 
 But if you add referral address, you will get 20% discount. (multiple of 8000 coin will be used)  
 60% of your coin usage will be sent to the contract.  
 And Referral address will get 20% of your coin usage. (multiple of 2000 coin will be transferred to the referral)  
-![plot](./res/20210630_174141.PNG)
+![plot](./res/20210630_174141.png)
 
 So if you add referral address 5 times, you can get 1 free time.  
 if you have been added to the referral address 5 times, also can get 1 free time.  
