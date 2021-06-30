@@ -206,4 +206,13 @@ So if you buy many coins early, you could save your money when you need it in th
 You could sell it to others by p2p and make a profit.  
 Also I am planning to make a little coin market for you to buy / sell coin too.  
 
+# DISCLAIMER
+This is focusing on checking the honeypot mechanism.  
+Many methods being used by honeypot scammers can be checked by this tool.  
+But there could be new methods or some rare methods that could not be handled by this.  
+(Or could have human error or missing things)  
+DM @AllCoinLab if you find that. 
+(https://t.me/AllCoinLab)  
+I will update this tool.  
+
 Thank you.
