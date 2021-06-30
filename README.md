@@ -9,7 +9,8 @@ https://bscscan.com/address/0x800D89Bc364680cA352d3f93670057CC0AC37A36#writeCont
 
 # Intro
 Tired of being fooled by HONEYPOT SCAMMERS?  
-I have made a contract which will help you to buy only SAFE tokens.
+I have made a contract which will help you to buy only SAFE tokens,  
+avoiding all honeypot tokens which cannot be selled.  
 ### EVEN IF CONTRACT IS NOT VERIFIED YET
 You can get in more earlier than others and could get moonshot!
 
