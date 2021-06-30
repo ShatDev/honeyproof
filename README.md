@@ -4,6 +4,8 @@ Contact: https://t.me/AllCoinLab
 
 # HoneyProof
 Code for HoneyProof project
+Contract & To use this:  
+https://bscscan.com/address/0x800D89Bc364680cA352d3f93670057CC0AC37A36#writeContract
 
 # Intro
 Tired of being fooled by HONEYPOT SCAMMERS?  
