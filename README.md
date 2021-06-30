@@ -3,7 +3,7 @@ Telegram: https://t.me/HoneyProof
 Contact: https://t.me/AllCoinLab
 
 # HoneyProof
-Code for HoneyProof project
+Code for HoneyProof project  
 Contract & To use this:  
 https://bscscan.com/address/0x800D89Bc364680cA352d3f93670057CC0AC37A36#writeContract
 
@@ -115,6 +115,10 @@ used for the SAFU checking for the token,
 and withdrawed / transferred to you with exactly same amount.  
 Your BNB won't be lost. Don't worry.  
 ![plot](./res/20210630_212625.png)
+
+Example for the refund process  
+https://bscscan.com/tx/0x7b70565b5d2eadb9578d9c3fb26e54eae2951b09e03184a703a5a7054481af31#internal  
+![plot](./res/20210630_174653.png)
 
 But if you want to be sure,  
 just put small amount like 0.001 BNB is also okay.  
