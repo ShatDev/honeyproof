@@ -84,7 +84,7 @@ It will be refunded to you.
 ![plot](./res/20210630_174048.png)
 
 5. Click 'Logs' tab  
-![plot](./res/20210630_174141.png)
+![plot](./res/20210630_213747.png)
 
 6. At the middle of the logs,
 you can check the result of the honeypot check.  
@@ -114,7 +114,7 @@ your BNB will be deposited,
 used for the SAFU checking for the token,  
 and withdrawed / transferred to you with exactly same amount.  
 Your BNB won't be lost. Don't worry.  
-![plot](./res/20210630_212625.PNG)
+![plot](./res/20210630_212625.png)
 
 But if you want to be sure,  
 just put small amount like 0.001 BNB is also okay.  
