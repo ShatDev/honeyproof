@@ -93,10 +93,10 @@ You can click token_adr for details.
 https://bscscan.com/tx/0x782a24b36a5969f7bb2bd04f2745b3fd3193a52ac4ca591e9777abb5aacd9cd5
 ![plot](./res/20210630_174150.png)
 
-PH token in this case is the typical honeypot scam coin  
+PH token in this case is the typical honeypot scam coin,  
 And as you can see, contract code is not even verified.  
-### AND THIS TOOL CAN CHECK HONEYPOT IF NOT EVEN VERIFIED.  
-You can check safu and get in early to get moonshot :)  
+### AND THIS TOOL CAN CHECK HONEYPOT EVEN IF THE CONTRACT IS NOT VERIFIED.  
+You can check safu and get in more earlier than others to get moonshot :)  
 https://www.reddit.com/r/CryptoCurrency/comments/mkoelx/beware_of_honeypot_scam_phbnb/  
 https://bscscan.com/address/0x639e7972244bbdf70f4ad1aad970b26e45c6d3de#comments  
 
