@@ -26,14 +26,14 @@ All the instructions and examples are described based on the Metamask.
 
 If you know how to do it, skip this :)
 
-1. Go to this link and click 'Connect to Web3':  
+Go to this link and click 'Connect to Web3':  
 https://bscscan.com/address/0x800D89Bc364680cA352d3f93670057CC0AC37A36#writeContract
 ![plot](./res/20210630_171801.png)
 
-2. Then you will see this image. Click Metamask to connect your wallet for bscscan.  
+Then you will see this image. Click Metamask to connect your wallet for bscscan.  
 ![plot](./res/20210630_171847.png)
 
-3. Some warnings from the bscscan page. Click confirm if you trust bscscan :)  
+Some warnings from the bscscan page. Click confirm if you trust bscscan :)  
 ![plot](./res/20210630_171854.png)
 
 Then your metamask wallet will be connected to bscscan.  
@@ -41,13 +41,13 @@ Then your metamask wallet will be connected to bscscan.
 
 ## Getting Free coin 
 
-1. Click 'Write' button in do_free_trial()  
+Click 'Write' button in do_free_trial()  
 ![plot](./res/20210630_172101.png)
 
 Click confirm to get free coin to use this honeypot checker.  
 ![plot](./res/20210630_172132.png)
 
-2. Click 'Read Contract' or click this link to check your free coin.  
+Click 'Read Contract' or click this link to check your free coin.  
 https://bscscan.com/address/0x800D89Bc364680cA352d3f93670057CC0AC37A36#readContract  
 put your address and click 'query' in get_balance().  
 You can see free token is set like this picture.  
@@ -58,10 +58,10 @@ https://bscscan.com/tx/0xee14a4ec99dfef431ed8042cb504759fa1d522e633d7e8d856a9ea6
 ![plot](./res/20210630_210918.png)
 
 ## Use this free coin to check honeypot
-1. Click 'Write Contract' or click this link:  
+Click 'Write Contract' or click this link:  
 https://bscscan.com/address/0x800D89Bc364680cA352d3f93670057CC0AC37A36#writeContract  
 
-2. Go to safe_check() and fill in the values
+Go to safe_check() and fill in the values
 - BNB: amount of BNB you want to buy for the token
 - Referral_adr: address for the referral (details in the 'Referral' section)
 - token_adr: the target token address to check honeypot
@@ -73,20 +73,20 @@ Referral set could be set to your wallet address for tutorial.
 (not recommended because of no discount, see the 'Referral' section for more)  
 ![plot](./res/20210630_173325.png)
 
-3. Click confirm at the metamask popup.
+Click confirm at the metamask popup.
 As I have set 0.1 BNB for check,  
 0.1 BNB will be added to be used for honeypot check.  
 It will be refunded to you.  
 (SAFU check details in the 'Code Explanation' section)  
 ![plot](./res/20210630_173829.png)
 
-4. Click 'View your transaction' and wait for the transaction get confirmed.  
+Click 'View your transaction' and wait for the transaction get confirmed.  
 ![plot](./res/20210630_174048.png)
 
-5. Click 'Logs' tab  
+Click 'Logs' tab  
 ![plot](./res/20210630_213747.png)
 
-6. At the middle of the logs,
+At the middle of the logs,
 you can check the result of the honeypot check.  
 If it cannot be selled, 'SCAM' will be displayed like below.
 You can click token_adr for details.  
@@ -117,6 +117,8 @@ Your BNB won't be lost. Don't worry.
 ![plot](./res/20210630_212625.png)
 
 Example for the refund process  
+0x6b14... is the wallet address.  
+You can see that 0.1 BNB is refunded.  
 https://bscscan.com/tx/0x7b70565b5d2eadb9578d9c3fb26e54eae2951b09e03184a703a5a7054481af31#internal  
 ![plot](./res/20210630_174653.png)
 
