@@ -62,7 +62,7 @@ Click 'Write Contract' or click this link:
 https://bscscan.com/address/0x800D89Bc364680cA352d3f93670057CC0AC37A36#writeContract  
 
 Go to safe_check() and fill in the values
-- BNB: amount of BNB you want to buy for the token
+- safe_check: amount of BNB you want to buy for the token
 - Referral_adr: address for the referral (details in the 'Referral' section)
 - token_adr: the target token address to check honeypot
 - is_v2: 'true' if it is in pancakeswap v2, 'false' if pancakeswap v1  
